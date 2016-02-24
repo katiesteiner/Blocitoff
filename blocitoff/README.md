@@ -1,0 +1,1 @@
+Blocitoff is a self destructing to-do list. This project was written during my Bloc course.
