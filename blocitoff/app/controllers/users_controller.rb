@@ -6,7 +6,13 @@ class UsersController < ApplicationController
   end
 
   def show
-    @users = User.find(params[:id])
+    if user_signed_in?
+      @email = current_user.email
+      @sign_in = current_user.last_sign_in_at
+      @items = current_user.items
+    else
+      redirect_to root_path
+    end
   end
 
   def update
