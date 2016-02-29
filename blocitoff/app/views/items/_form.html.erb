@@ -1,9 +1,8 @@
-
-    <%= form_for [user, item] do |f| %>
-        <div class="form-group">
-          <form class="form-inline">
-            <%= f.text_field :name, class: 'form-control', placeholder: "Enter to do" %>
-            <%= f.submit %>
-        </form>
-        </div>
-    <% end %>
+<%= form_for [user, item] do |f| %>
+  <div class="form-group">            
+    <form class="form-inline">
+      <%= f.text_field :name, class: 'form-control', placeholder: "Enter to do" %>
+      <%= f.submit %>
+    </form>
+  </div>
+<% end %>

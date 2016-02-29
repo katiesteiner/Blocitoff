@@ -10,8 +10,8 @@ class ItemsController < ApplicationController
   end
 
   def create
-    @item = Item.new(item_params)
-    @item.user = current_user
+    @user = current_user
+    @item = @user.items.new(item_params)
     @new_item = Item.new
 
     if @item.save
@@ -19,6 +19,22 @@ class ItemsController < ApplicationController
     else
       flash[:error] = "There was an error creating the to-do"
       redirect_to root_path
+    end
+  end
+
+  def destroy
+    @user = current_user
+    @item = @user.items.find(params[:id])
+
+    if @item.destroy
+      flash[:notice] = "\"#{@item.name}\" was deleted!"
+    else
+      flash[:error] = "\"#{@item.name}\"couldn't be deleted. Please try again."
+    end
+
+    respond_to do |format|
+      format.html
+      format.js
     end
   end
 
