@@ -11,14 +11,6 @@ require 'faker'
 end
 users = User.all
 
-25.times do
-  Item.create!(
-    user: users.sample,
-    name: Faker::Lorem.sentence
-    )
-end
-items = Item.all 
-
 member = User.new(
   name: 'Member User',
   email: 'member@example.com',
@@ -26,6 +18,26 @@ member = User.new(
   )
 member.skip_confirmation!
 member.save!
+
+25.times do
+  item = Item.create!(
+    user: member,
+    name: Faker::Lorem.sentence,
+    )
+  item.update_attribute(:created_at, rand(1.year).ago)
+end
+items = Item.all
+
+25.times do
+  item = Item.create!(
+    user: member,
+    name: Faker::Lorem.sentence,
+    )
+  item.update_attribute(:created_at, rand(1.day).ago)
+end
+items = Item.all
+
+
 
 puts "Seed finished"
 puts "#{Item.count} items created"
