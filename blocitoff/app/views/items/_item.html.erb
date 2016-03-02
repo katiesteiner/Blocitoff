@@ -1,6 +1,6 @@
 <% @items.each{|item| item.delete_after_7_days} %>
 <%= content_tag :div, id: "item-#{item.id}" do %>
-  <%= link_to "", [item.user, item], method: :delete, class: 'glyphicon glyphicon-ok', remote: true %>
+  <%= link_to "", [item.user, item], method: :delete, class: 'fa fa-sticky-note-o fa-lg', remote: true %>
   <%= item.name %> 
   <p>Created at: <%= item.created_at %>
   | Days Left: <%= item.days_left %></p>
