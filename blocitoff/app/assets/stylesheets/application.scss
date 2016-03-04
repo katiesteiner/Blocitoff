@@ -8,3 +8,76 @@ user.info {
 .nav {
   margin-top: 5px;
 }
+
+/* HOME SECTION STYLES */
+
+#home {
+  background: image-url('background.jpg') no-repeat center center;
+  padding: 0;
+  -webkit-background-size: cover;
+  background-size: cover;
+  -moz-background-size: cover;
+}
+
+#home .overlay {
+  padding-top: 120px;
+  background-color: rgba(36, 36, 36, 0.8);
+  min-height: 700px;
+  padding-bottom: 40px;
+}
+
+#home h1 {
+  margin-bottom: 20px;
+  line-height: 40px;
+  font-size: 35px;
+  color: #48A5FF;
+}
+
+#home h4 {
+  margin-bottom: 30px;
+  line-height: 40px;
+  font-size: 20px;
+  color: #D0D0D0;
+}
+
+/* Button Styles */
+
+.btn-custom {
+  min-height: 60px;
+  border-radius: 30px;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  padding: 15px 40px 15px 40px;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  margin: 25px 5px 5px 0px;
+}
+
+.btn-one {
+  background-color: transparent;
+  border: 5px solid #48A5FF;
+  margin: 25px 5px 5px 0px;
+  font-weight: bold;
+}
+
+.btn-one:hover {
+  background-color: #48A5FF;
+  color: #fff;
+  text-decoration: none;
+}
+
+.btn-two {
+  background-color: #48A5FF;
+  border: 5px solid #48A5FF;
+  color: #fff;
+  font-weight: bold;
+}
+
+.btn-two:hover {
+  background-color: transparent;
+  color: #000;
+  text-decoration: none;
+}
+
